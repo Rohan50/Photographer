@@ -1,3 +1,10 @@
+const state = {
+  adminConfig: null,
+  galleries: [],
+  blogs: [],
+  enquiries: []
+};
+
 function convertImageLink(url) {
   if (!url) return url;
 
