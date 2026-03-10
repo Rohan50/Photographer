@@ -419,11 +419,11 @@ const wireEvents = () => {
       ? state.galleries.map((entry) => (entry.id === payload.id ? payload : entry))
       : [payload, ...state.galleries];
 
-    saveDraft("galleries", state.galleries);
-    renderSummary();
-    renderGalleries();
-    resetGalleryForm();
-    showMessage("Gallery updated in browser. Download galleries.json to save changes.");
+    saveToServer("galleries.json", state.galleries);
+renderSummary();
+renderGalleries();
+resetGalleryForm();
+showMessage("Gallery saved.");
   });
 
   el.blogForm.addEventListener("submit", (event) => {
@@ -435,11 +435,11 @@ const wireEvents = () => {
       ? state.blogs.map((entry) => (entry.id === payload.id ? payload : entry))
       : [payload, ...state.blogs];
 
-    saveDraft("blogs", state.blogs);
-    renderSummary();
-    renderBlogs();
-    resetBlogForm();
-    showMessage("Blog updated in browser. Download blogs.json to save changes.");
+    saveToServer("blogs.json", state.blogs);
+renderSummary();
+renderBlogs();
+resetBlogForm();
+showMessage("Blog saved.");
   });
 
   el.enquiryForm.addEventListener("submit", (event) => {
@@ -451,11 +451,11 @@ const wireEvents = () => {
       ? state.enquiries.map((entry) => (entry.id === payload.id ? payload : entry))
       : [payload, ...state.enquiries];
 
-    saveDraft("enquiries", state.enquiries);
-    renderSummary();
-    renderEnquiries();
-    resetEnquiryForm();
-    showMessage("Enquiry updated in browser. Download enquiries.json to save changes.");
+    saveToServer("enquiries.json", state.enquiries);
+renderSummary();
+renderEnquiries();
+resetEnquiryForm();
+showMessage("Enquiry saved.");
   });
 
   el.galleryResetBtn.addEventListener("click", resetGalleryForm);
@@ -501,34 +501,30 @@ const init = async () => {
 };
 
 init();
-async function saveToGitHub(fileName, content) {
+async function saveToServer(fileName, content) {
 
-  const owner = "Rohan50";
-  const repo = "Photographer";
-  const branch = "main";
-
-  const path = `frontend/public/data/${fileName}`;
-
-  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-
-  const getFile = await fetch(apiUrl);
-  const fileData = await getFile.json();
-
-  const sha = fileData.sha;
-
-  const response = await fetch(apiUrl, {
-    method: "PUT",
+  await fetch("/api/save-json", {
+    method: "POST",
     headers: {
-      "Authorization": `token ${token}`,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      message: `Update ${fileName} from admin panel`,
-      content: btoa(JSON.stringify(content, null, 2)),
-      sha: sha,
-      branch: branch
+      fileName,
+      content
     })
   });
 
-  return response.json();
+  showMessage(`${fileName} saved successfully.`);
+}
+async function saveToServer(fileName, content) {
+  await fetch("/api/save-json", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      fileName,
+      content
+    })
+  });
 }
