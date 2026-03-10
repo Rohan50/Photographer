@@ -11,6 +11,7 @@ export default async function handler(req, res) {
   const token = process.env.GITHUB_TOKEN;
 
   console.log("TOKEN EXISTS:", !!token);
+  console.log(owner, repo, token?.slice(0,10));
 
   const path = `frontend/public/data/${fileName}`;
 
