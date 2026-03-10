@@ -503,23 +503,19 @@ const init = async () => {
 init();
 
 async function saveToServer(fileName, content) {
-
   const response = await fetch("/api/save-json", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      fileName,
-      content
-    })
+    body: JSON.stringify({ fileName, content })
   });
 
   const result = await response.json();
 
   if (!response.ok) {
+    alert("Failed to save");
     console.error(result);
-    alert("Error saving data");
     return;
   }
 
