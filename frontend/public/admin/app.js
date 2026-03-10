@@ -182,7 +182,7 @@ const blogFormToPayload = () => {
     category: document.getElementById("blogCategory").value.trim(),
     excerpt: document.getElementById("blogExcerpt").value.trim(),
     content: document.getElementById("blogContent").value.trim(),
-    cover_image: document.getElementById("blogCoverImage").value.trim(),
+    cover_image: convertImageLink(   document.getElementById("blogCoverImage").value.trim() ),
     embedded_images: embeddedImages,
     is_featured: document.getElementById("blogFeatured").checked,
     published_at: publishedAt,
