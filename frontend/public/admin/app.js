@@ -503,17 +503,35 @@ const init = async () => {
 init();
 
 async function saveToServer(fileName, content) {
-  const response = await fetch("/api/save-json", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      fileName,
-      content
-    })
-  });
 
-  const result = await response.json();
-  console.log(result);
+const owner = "Rohan50";
+const repo = "Photographer";
+const token = "YOUR_GITHUB_TOKEN";
+
+const path = `frontend/public/data/${fileName}`;
+
+const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+const getFile = await fetch(url, {
+headers: { Authorization: `token ${token}` }
+});
+
+const fileData = await getFile.json();
+
+const sha = fileData.sha;
+
+await fetch(url, {
+method: "PUT",
+headers: {
+Authorization: `token ${token}`,
+"Content-Type": "application/json"
+},
+body: JSON.stringify({
+message: `Update ${fileName} from admin`,
+content: btoa(JSON.stringify(content, null, 2)),
+sha: sha
+})
+});
+
+console.log(fileName + " updated in GitHub");
 }
