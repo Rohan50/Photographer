@@ -1,5 +1,22 @@
 [
   {
+    "id": "73a2d198-ce27-4ea9-8d8b-9295fa51e9f3",
+    "slug": "maharaja",
+    "title": "maharaja",
+    "category": "Weddings",
+    "description": "Masst Wedding",
+    "location": "Jaipur",
+    "shoot_date": "January 2025",
+    "cover_image": "https://drive.google.com/file/d/1h1XJOyieRN-8urFlVAhDnGDFIxlBHuIj/view?usp=drive_link",
+    "images": [
+      "https://drive.google.com/file/d/1h1XJOyieRN-8urFlVAhDnGDFIxlBHuIj/view?usp=drive_link"
+    ],
+    "is_featured": false,
+    "photo_count": 1,
+    "created_at": "2026-03-10T10:33:51.256Z",
+    "updated_at": "2026-03-10T10:33:51.256Z"
+  },
+  {
     "id": "dcae75d7-c3ff-4200-93e2-2648aeb8e4e5",
     "slug": "fountain-sewa",
     "title": "Fountain Sewa",
