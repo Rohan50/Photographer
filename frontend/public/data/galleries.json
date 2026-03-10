@@ -1,23 +1,23 @@
 [
   {
-    "id": "3c89294c-dcca-44d4-8e52-3d3fb1770493",
-    "slug": "jaanwar",
-    "title": "Jaanwar",
-    "category": "Animals",
-    "description": "Masst 4 pair par chalne waale jaanwar",
-    "location": "Yahaan Vahaan",
-    "shoot_date": "November 2025",
-    "cover_image": "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159284/samples/animals/reindeer.jpg",
+    "id": "0065842e-fca5-4631-a707-d08f169231e5",
+    "slug": "fountain-sewa",
+    "title": "Fountain Sewa",
+    "category": "Resort",
+    "description": "When Rohan Pareek wanted to help the staff of Astroport Resort, Sariska. Truly a mad experience",
+    "location": "Astroport, Sariska",
+    "shoot_date": "August 2023",
+    "cover_image": "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159289/samples/landscapes/landscape-panorama.jpg",
     "images": [
-      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159289/samples/animals/kitten-playing.gif",
-      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159286/samples/animals/three-dogs.jpg",
-      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159282/samples/animals/cat.jpg",
-      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159284/samples/animals/reindeer.jpg"
+      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159288/samples/landscapes/nature-mountains.jpg",
+      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159286/samples/landscapes/beach-boat.jpg",
+      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159286/samples/landscapes/architecture-signs.jpg",
+      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159285/samples/landscapes/girl-urban-view.jpg"
     ],
     "is_featured": true,
     "photo_count": 4,
-    "created_at": "2026-03-10T16:25:31.889Z",
-    "updated_at": "2026-03-10T16:25:31.889Z"
+    "created_at": "2026-03-09T19:24:28.580Z",
+    "updated_at": "2026-03-10T16:31:37.825Z"
   },
   {
     "title": "Continental Fragments",
