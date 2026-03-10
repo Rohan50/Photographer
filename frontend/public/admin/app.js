@@ -1,10 +1,39 @@
-const state = {
-  adminConfig: null,
-  galleries: [],
-  blogs: [],
-  enquiries: [],
-};
+function convertImageLink(url) {
+  if (!url) return url;
 
+  url = url.trim();
+
+  // GOOGLE DRIVE
+  let match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+  if (match) {
+    return `https://drive.google.com/uc?export=view&id=${match[1]}`;
+  }
+
+  match = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  if (match && url.includes("drive.google.com")) {
+    return `https://drive.google.com/uc?export=view&id=${match[1]}`;
+  }
+
+  // DROPBOX
+  if (url.includes("dropbox.com")) {
+    return url.replace("?dl=0", "?raw=1").replace("&dl=0", "&raw=1");
+  }
+
+  // GOOGLE PHOTOS (best attempt)
+  if (url.includes("photos.google.com")) {
+    console.warn("Google Photos links may not allow embedding.");
+    return url;
+  }
+
+  // INSTAGRAM (basic embed image extraction attempt)
+  if (url.includes("instagram.com")) {
+    console.warn("Instagram links may not allow direct embedding.");
+    return url;
+  }
+
+  // NORMAL IMAGE URL
+  return url;
+}
 const el = {
   loginSection: document.getElementById("loginSection"),
   dashboardSection: document.getElementById("dashboardSection"),
@@ -107,10 +136,10 @@ const renderSummary = () => {
 
 const galleryFormToPayload = () => {
   const images = document
-    .getElementById("galleryImages")
-    .value.split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
+  .getElementById("galleryImages")
+  .value.split("\n")
+  .map((line) => convertImageLink(line.trim()))
+  .filter(Boolean);
 
   const title = document.getElementById("galleryTitle").value.trim();
   const id = document.getElementById("galleryId").value || makeId();
@@ -124,7 +153,9 @@ const galleryFormToPayload = () => {
     description: document.getElementById("galleryDescription").value.trim(),
     location: document.getElementById("galleryLocation").value.trim(),
     shoot_date: document.getElementById("galleryShootDate").value.trim(),
-    cover_image: document.getElementById("galleryCoverImage").value.trim(),
+    cover_image: convertImageLink(
+  document.getElementById("galleryCoverImage").value.trim()
+),
     images,
     is_featured: document.getElementById("galleryFeatured").checked,
     photo_count: images.length,
@@ -137,7 +168,7 @@ const blogFormToPayload = () => {
   const embeddedImages = document
     .getElementById("blogEmbeddedImages")
     .value.split("\n")
-    .map((line) => line.trim())
+    .map((line) => convertImageLink(line.trim()))
     .filter(Boolean);
 
   const title = document.getElementById("blogTitle").value.trim();
