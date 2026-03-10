@@ -506,8 +506,7 @@ init();
 }
 
 async function saveToServer(fileName, content) {
-
-  const response = await fetch(`${window.location.origin}/api/save-json`, {
+  const response = await fetch("/api/save-json", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -515,11 +514,9 @@ async function saveToServer(fileName, content) {
     body: JSON.stringify({
       fileName,
       content
-    }),
-    mode: "cors"
+    })
   });
 
   const result = await response.json();
   console.log(result);
-
 }
