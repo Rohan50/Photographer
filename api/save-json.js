@@ -18,18 +18,22 @@ export default async function handler(req, res) {
 
     const current = await fetch(url, {
       headers: {
-        Authorization: `token ${token}`
+        Authorization: `Bearer ${token}`
       }
     });
 
     const data = await current.json();
+
+    if (!data.sha) {
+  return res.status(400).json({ error: "File not found in repo" });
+}
 
     const sha = data.sha;
 
     const response = await fetch(url, {
       method: "PUT",
       headers: {
-        Authorization: `token ${token}`,
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
