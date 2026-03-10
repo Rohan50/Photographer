@@ -10,6 +10,8 @@ export default async function handler(req, res) {
   const repo = process.env.GITHUB_REPO;
   const token = process.env.GITHUB_TOKEN;
 
+  console.log("TOKEN EXISTS:", !!token);
+
   const path = `frontend/public/data/${fileName}`;
 
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
@@ -18,15 +20,17 @@ export default async function handler(req, res) {
 
     const current = await fetch(url, {
       headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
       }
     });
 
     const data = await current.json();
 
     if (!data.sha) {
-  return res.status(400).json({ error: "File not found in repo" });
-}
+      return res.status(400).json({ error: "File not found in repo", github: data });
+    }
 
     const sha = data.sha;
 
@@ -34,6 +38,8 @@ export default async function handler(req, res) {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
