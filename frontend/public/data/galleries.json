@@ -1,23 +1,23 @@
 [
   {
-    "id": "94c46877-949f-4ae8-b3d3-7ba68e0c6009",
-    "slug": "fountain-sewa",
-    "title": "Fountain Sewa",
-    "category": "Resort",
-    "description": "sds",
-    "location": "Astroport, Sariska",
-    "shoot_date": "August 2023",
-    "cover_image": "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159440/Screenshot_2025-12-19_at_4.51.33_PM_azzz79.png",
+    "id": "3c89294c-dcca-44d4-8e52-3d3fb1770493",
+    "slug": "jaanwar",
+    "title": "Jaanwar",
+    "category": "Animals",
+    "description": "Masst 4 pair par chalne waale jaanwar",
+    "location": "Yahaan Vahaan",
+    "shoot_date": "November 2025",
+    "cover_image": "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159284/samples/animals/reindeer.jpg",
     "images": [
-      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159442/Screenshot_2025-11-07_at_3.44.11_PM_1_fwk9sp.png",
-      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159441/s140738246495507426_p388_i1_w640_v4owbb.jpg",
-      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159440/unnamed_jwkxag.jpg",
-      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159440/The_Seal_of_the_President_of_the_United_States_dg6zr4.jpg"
+      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159289/samples/animals/kitten-playing.gif",
+      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159286/samples/animals/three-dogs.jpg",
+      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159282/samples/animals/cat.jpg",
+      "https://res.cloudinary.com/da8knmd1c/image/upload/v1773159284/samples/animals/reindeer.jpg"
     ],
     "is_featured": true,
     "photo_count": 4,
-    "created_at": "2026-03-10T16:19:19.022Z",
-    "updated_at": "2026-03-10T16:19:19.022Z"
+    "created_at": "2026-03-10T16:25:31.889Z",
+    "updated_at": "2026-03-10T16:25:31.889Z"
   },
   {
     "title": "Continental Fragments",
