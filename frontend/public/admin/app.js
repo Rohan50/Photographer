@@ -504,8 +504,12 @@ init();
 
   showMessage(`${fileName} saved successfully.`);
 }
+
 async function saveToServer(fileName, content) {
-  await fetch("https://photographer-portfolio-ivory.vercel.app/api/save-json", {
+
+  const apiUrl = window.location.origin + "/api/save-json";
+
+  await fetch(apiUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -515,4 +519,5 @@ async function saveToServer(fileName, content) {
       content
     })
   });
+
 }
