@@ -517,7 +517,7 @@ async function saveToServer(fileName, content) {
   showMessage(`${fileName} saved successfully.`);
 }
 async function saveToServer(fileName, content) {
-  await fetch("/api/save-json", {
+  await fetch("https://photographer-portfolio-ivory.vercel.app/api/save-json", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
