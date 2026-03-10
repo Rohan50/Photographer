@@ -501,18 +501,6 @@ const init = async () => {
 };
 
 init();
-async function saveToServer(fileName, content) {
-
-  await fetch("/api/save-json", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      fileName,
-      content
-    })
-  });
 
   showMessage(`${fileName} saved successfully.`);
 }
