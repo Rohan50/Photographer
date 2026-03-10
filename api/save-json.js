@@ -10,7 +10,11 @@ export default async function handler(req, res) {
 
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
 
-  const current = await fetch(url);
+  const current = await fetch(url, {
+  headers: {
+    Authorization: `token ${token}`
+  }
+});
   const data = await current.json();
 
   const sha = data.sha;
@@ -22,10 +26,11 @@ export default async function handler(req, res) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      message: `Update ${fileName} from admin panel`,
-      content: Buffer.from(JSON.stringify(content, null, 2)).toString("base64"),
-      sha: sha
-    })
+  message: `Update ${fileName} from admin panel`,
+  content: Buffer.from(JSON.stringify(content, null, 2)).toString("base64"),
+  sha: sha,
+  branch: "main"
+})
   });
 
   const result = await response.json();
