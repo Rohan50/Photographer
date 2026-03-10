@@ -501,3 +501,34 @@ const init = async () => {
 };
 
 init();
+async function saveToGitHub(fileName, content) {
+
+  const owner = "Rohan50";
+  const repo = "Photographer";
+  const branch = "main";
+
+  const path = `frontend/public/data/${fileName}`;
+
+  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+  const getFile = await fetch(apiUrl);
+  const fileData = await getFile.json();
+
+  const sha = fileData.sha;
+
+  const response = await fetch(apiUrl, {
+    method: "PUT",
+    headers: {
+      "Authorization": `token ${token}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      message: `Update ${fileName} from admin panel`,
+      content: btoa(JSON.stringify(content, null, 2)),
+      sha: sha,
+      branch: branch
+    })
+  });
+
+  return response.json();
+}
