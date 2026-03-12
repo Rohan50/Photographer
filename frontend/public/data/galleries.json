@@ -1,23 +1,5 @@
 [
   {
-    "id": "5cb2c9df-b6b7-4040-a90a-0b8fac33cc28",
-    "slug": "masst-gallery",
-    "title": "Masst Gallery",
-    "category": "kuch bhi",
-    "description": "asjkbdkjsad",
-    "location": "jaipur",
-    "shoot_date": "March 2026",
-    "cover_image": "https://unsplash.com/photos/double-exposure-of-mans-face-and-traffic-lights-FeH3E1Ofy7c",
-    "images": [
-      "https://unsplash.com/photos/orange-sofa-with-zebra-print-rug-and-side-table-qcNWxz04evQ",
-      "https://unsplash.com/photos/stylist-drapes-client-with-a-black-cape-in-salon-UnSFmJCCrW0"
-    ],
-    "is_featured": true,
-    "photo_count": 2,
-    "created_at": "2026-03-11T06:49:53.612Z",
-    "updated_at": "2026-03-11T06:49:53.612Z"
-  },
-  {
     "id": "0065842e-fca5-4631-a707-d08f169231e5",
     "slug": "fountain-sewa",
     "title": "Fountain Sewa",
