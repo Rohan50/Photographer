@@ -11,7 +11,7 @@ const GalleriesPage = () => {
   const [error, setError] = useState("");
 
   useSeo({
-    title: "Photography Galleries | Shivi Pareek",
+    title: "Photography Galleries | Photographer",
     description: "Explore wedding, portrait, travel, fashion, street, and nature black and white photography galleries.",
   });
 
