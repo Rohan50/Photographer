@@ -14,8 +14,8 @@ const GalleryDetailPage = () => {
   const [error, setError] = useState("");
 
   useSeo({
-    title: `${gallery?.title || "Gallery"} | Shivi Pareek`,
-    description: gallery?.description || "A high-resolution monochrome gallery by Shivi Pareek.",
+    title: `${gallery?.title || "Gallery"} | Photographer`,
+    description: gallery?.description || "A high-resolution monochrome gallery by Photographer.",
   });
 
   const loadGallery = useCallback(async () => {
