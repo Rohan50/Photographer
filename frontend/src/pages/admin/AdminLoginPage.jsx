@@ -12,7 +12,7 @@ const AdminLoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useSeo({
-    title: "Admin Login | Shivi Pareek",
+    title: "Admin Login | Photographer",
     description: "Secure admin login for gallery, blog, and enquiry management.",
   });
 
