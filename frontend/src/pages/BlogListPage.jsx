@@ -10,7 +10,7 @@ const BlogListPage = () => {
   const [error, setError] = useState("");
 
   useSeo({
-    title: "Photography Journal | Shivi Pareek",
+    title: "Photography Journal | Photographer",
     description: "Stories behind black and white shoots, travel frames, and photography insights.",
   });
 
