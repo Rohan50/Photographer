@@ -11,8 +11,8 @@ const BlogDetailPage = () => {
   const [error, setError] = useState("");
 
   useSeo({
-    title: `${post?.title || "Blog"} | Shivi Pareek`,
-    description: post?.excerpt || "Photography journal entry from Shivi Pareek.",
+    title: `${post?.title || "Blog"} | Photographer`,
+    description: post?.excerpt || "Photography journal entry from Photographer.",
   });
 
   const loadPost = useCallback(async () => {
