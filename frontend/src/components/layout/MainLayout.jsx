@@ -33,7 +33,7 @@ const MainLayout = ({ children }) => {
       <header className="site-header" data-testid="site-header">
         <div className="content-wrap header-inner" data-testid="site-header-inner">
           <Link to="/" className="brand-link" data-testid="site-brand-link">
-            SHIVI PAREEK
+            Photographer
           </Link>
 
           <nav className="desktop-nav" data-testid="desktop-navigation">
@@ -100,7 +100,7 @@ const MainLayout = ({ children }) => {
         <div className="content-wrap footer-inner" data-testid="site-footer-inner">
           <div className="footer-column" data-testid="footer-brand-column">
             <p className="footer-brand" data-testid="footer-brand-name">
-              SHIVI PAREEK
+              Photographer
             </p>
             <p className="footer-text" data-testid="footer-tagline-text">
               Monochrome stories crafted with light and emotion.
@@ -145,7 +145,7 @@ const MainLayout = ({ children }) => {
         </div>
 
         <p className="copyright" data-testid="footer-copyright-text">
-          © {new Date().getFullYear()} Shivi Pareek. All rights reserved.
+          © {new Date().getFullYear()} Photographer. All rights reserved.
         </p>
       </footer>
     </div>
