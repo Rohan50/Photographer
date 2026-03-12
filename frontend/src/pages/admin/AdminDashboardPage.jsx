@@ -39,7 +39,7 @@ const AdminDashboardPage = () => {
   const [editingBlogId, setEditingBlogId] = useState(null);
 
   useSeo({
-    title: "Admin Dashboard | Shivi Pareek",
+    title: "Admin Dashboard | Photographer",
     description: "Manage galleries, blog content, and booking enquiries from one dashboard.",
   });
 
