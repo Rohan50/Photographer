@@ -12,7 +12,7 @@ const HomePage = () => {
   const [error, setError] = useState("");
 
   useSeo({
-    title: "Shivi Pareek | Editorial Black & White Photography",
+    title: "Photographer | Editorial Black & White Photography",
     description: "Premium black & white photography portfolio featuring wedding, portrait, travel and editorial visual stories.",
   });
 
