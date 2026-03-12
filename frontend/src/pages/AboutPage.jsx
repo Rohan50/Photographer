@@ -9,8 +9,8 @@ const AboutPage = () => {
   const [error, setError] = useState("");
 
   useSeo({
-    title: "About the Photographer | Shivi Pareek",
-    description: "Learn about Shivi Pareek's photography philosophy, journey, and editorial monochrome style.",
+    title: "About the Photographer | Photographer",
+    description: "Learn about Photographer's photography philosophy, journey, and editorial monochrome style.",
   });
 
   const loadData = useCallback(async () => {
@@ -53,7 +53,7 @@ const AboutPage = () => {
     <div className="content-wrap page-stack" data-testid="about-page">
       <section className="split-section section-spacing" data-testid="about-main-section">
         <div className="split-image" data-testid="about-portrait-image-wrapper">
-          <img src={about.portrait_image} alt="Portrait of Shivi Pareek" loading="lazy" data-testid="about-portrait-image" />
+          <img src={about.portrait_image} alt="Portrait of Photographer" loading="lazy" data-testid="about-portrait-image" />
         </div>
 
         <div className="split-content" data-testid="about-main-content">
